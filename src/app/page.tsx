@@ -16,7 +16,6 @@ export default function Page() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
-  const [messages, setMessages] = useState([])
   const [messages, setMessages] = useState<Message[]>([])
 
   // 2. --- FUNCTION DECLARATIONS ---
