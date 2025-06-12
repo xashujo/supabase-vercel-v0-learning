@@ -4,13 +4,20 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabaseClient'
 
+type Message = {
+  id: number
+  user_id: string
+  content: string
+  created_at: string | null
+}
+
 export default function Page() {
   // 1. --- STATE HOOKS ---
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const [messages, setMessages] = useState([])
-  const [newMessage, setNewMessage] = useState('')
+  const [messages, setMessages] = useState<Message[]>([])
 
   // 2. --- FUNCTION DECLARATIONS ---
   const fetchMessages = async () => {
@@ -54,7 +61,7 @@ export default function Page() {
     if (error || status >= 400) {
       console.error('Error adding message:', { error, status, data })
     } else {
-      setNewMessage('')
+      setNewMessage('')	
       fetchMessages()
     }
   }
