@@ -3,6 +3,8 @@
 
 import { useEffect, useState } from 'react'
 import { supabase } from '../../lib/supabaseClient'
+import type { User } from '@supabase/supabase-js'
+
 
 type Message = {
   id: number
@@ -15,7 +17,7 @@ export default function Page() {
   // 1. --- STATE HOOKS ---
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState<User | null>(null)
   const [messages, setMessages] = useState<Message[]>([])
   const [newMessage, setNewMessage] = useState('')
 
