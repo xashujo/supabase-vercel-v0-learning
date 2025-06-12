@@ -15,6 +15,8 @@ type Message = {
 
 export default function Page() {
   // 1. --- STATE HOOKS ---
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [user, setUser] = useState<User | null>(null)
