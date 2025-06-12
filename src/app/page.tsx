@@ -17,6 +17,7 @@ export default function Page() {
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const [messages, setMessages] = useState<Message[]>([])
+  const [newMessage, setNewMessage] = useState('')
 
   // 2. --- FUNCTION DECLARATIONS ---
   const fetchMessages = async () => {
